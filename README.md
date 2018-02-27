@@ -1,24 +1,9 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+2 exemples de carousel
 
-Things you may want to cover:
+Le premier : simple avec image qui defile seule
 
-* Ruby version
+le deuxieme : avec animation coté et bas
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+https://carouseljquery.herokuapp.com/
