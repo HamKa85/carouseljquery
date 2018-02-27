@@ -1,0 +1,86 @@
+<style>
+.slider {
+  margin: 10px 0;
+  width: 580px; /* Update to your slider width */
+  height: 550px; /* Update to your slider height */
+  position: relative;
+  overflow: hidden;
+}
+
+.slider li {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+</style>
+
+<script>
+jQuery(function($) {
+
+  // settings
+  var $slider = $('.slider'); // class or id of carousel slider
+  var $slide = 'li'; // could also use 'img' if you're not using a ul
+  var $transition_time = 1000; // 1 second
+  var $time_between_slides = 5000; // 5 seconds
+
+  function slides(){
+    return $slider.find($slide);
+  }
+
+  slides().fadeOut();
+
+  // set active classes
+  slides().first().addClass('active');
+  slides().first().fadeIn($transition_time);
+
+  // auto scroll
+  $interval = setInterval(
+    function(){
+      var $i = $slider.find($slide + '.active').index();
+
+      slides().eq($i).removeClass('active');
+      slides().eq($i).fadeOut($transition_time);
+
+      if (slides().length == $i + 1) $i = -1; // loop to start
+
+      slides().eq($i + 1).fadeIn($transition_time);
+      slides().eq($i + 1).addClass('active');
+    }
+    , $transition_time +  $time_between_slides
+  );
+
+});
+</script>
+
+
+<center>
+<ul class="slider">
+ <li>
+   <img src="https://farm4.staticflickr.com/3937/15437546888_6a6f608e9c.jpg" />
+ </li>
+ <li>
+   <img src="https://c6.staticflickr.com/6/5476/30352693045_0b6620070b.jpg" />
+ </li>
+ <li>
+   <img src="http://farm4.staticflickr.com/3137/2698866948_f273755a09_z.jpg?zz=1" />
+ </li>
+ <li>
+   <img src="http://2.bp.blogspot.com/-CmBgofK7QzU/TVj3u3N1h2I/AAAAAAAADN8/OszBhGvvXRU/s640/tumblr_lg7h9gpbtP1qap9qio1_500.jpeg" />
+ </li>
+</ul>
+
+<br>
+
+<%= link_to 'Demo 2', home_index2_path %>
+</center>
