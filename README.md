@@ -2,8 +2,10 @@
 
 2 exemples de carousel
 
-Le premier : simple avec image qui defile seule
 
-le deuxieme : avec animation coté et bas
+Le premier : avec animation coté et bas
+
+le deuxieme : simple avec image qui defile seule
+
 
 https://carouseljquery.herokuapp.com/
